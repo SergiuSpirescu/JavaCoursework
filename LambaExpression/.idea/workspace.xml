@@ -2,12 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0c3d149c-d226-43ac-b749-3d7b82683989" name="Default Changelist" comment="">
-
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/LambaExpression/com/sspirescu/CodeToRun.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LambaExpression/com/sspirescu/CodeToRun.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/LambaExpression/com/sspirescu/Employee.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LambaExpression/com/sspirescu/Employee.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/LambaExpression/com/sspirescu/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LambaExpression/com/sspirescu/Main.class" afterDir="false" />
-
       <change beforePath="$PROJECT_DIR$/src/com/sspirescu/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/sspirescu/Main.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -112,8 +110,7 @@
     <option name="TAB_STATES">
       <map>
         <entry key="MAIN">
-          <value>
-          </value>
+          <value />
         </entry>
       </map>
     </option>
