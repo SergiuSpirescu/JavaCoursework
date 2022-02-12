@@ -2,9 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0c3d149c-d226-43ac-b749-3d7b82683989" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml.bak" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+<<<<<<< HEAD
+
+=======
+>>>>>>> 04d818f (FX using Lambda and changes to the previous exercise)
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/LambaExpression/com/sspirescu/CodeToRun.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LambaExpression/com/sspirescu/CodeToRun.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/LambaExpression/com/sspirescu/Employee.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LambaExpression/com/sspirescu/Employee.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/LambaExpression/com/sspirescu/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LambaExpression/com/sspirescu/Main.class" afterDir="false" />
+
+      <change beforePath="$PROJECT_DIR$/src/com/sspirescu/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/sspirescu/Main.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -37,17 +44,11 @@
     </option>
   </component>
   <component name="ProjectId" id="2513ZzcVIN1z0fXgf9RReIPhgm8" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
-    <ConfirmationsSetting value="2" id="Add" />
-  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
-    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="project.structure.last.edited" value="Project" />
-    <property name="project.structure.proportion" value="0.15" />
-    <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="preferences.keymap" />
   </component>
   <component name="RunDashboard">
@@ -89,6 +90,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1644680824539</updated>
+
       <workItem from="1644683861117" duration="744000" />
     </task>
     <task id="LOCAL-00001" summary="Commit from IntelliJ">
@@ -114,12 +116,14 @@
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
-        <entry key="MAIN" />
+        <entry key="MAIN">
+          <value>
+          </value>
+        </entry>
       </map>
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Commit from IntelliJ" />
     <MESSAGE value="Added List of employees and Comparator to sort them &#10;&#10;Commit from IntelliJ" />
     <option name="LAST_COMMIT_MESSAGE" value="Added List of employees and Comparator to sort them &#10;&#10;Commit from IntelliJ" />
