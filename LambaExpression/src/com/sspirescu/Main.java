@@ -13,7 +13,7 @@ public class Main {
         }).start();
 
 
-        Employee john = new Employee("Johan Doe", 30);
+        Employee john = new Employee("Rohan Doe", 30);
         Employee tim = new Employee("Tim Buchalka", 41);
         Employee snow = new Employee("Jon Snow", 17);
         Employee jack = new Employee("Jack Reacher", 34);
@@ -24,7 +24,8 @@ public class Main {
         employees.add(snow);
         employees.add(jack);
 
-        Collections.sort(employees, (employee1, employee2) -> employee1.getName().compareTo(employee2.getName()));
+        Collections.sort(employees, (employee1, employee2) ->
+                employee1.getName().compareTo(employee2.getName()));
 
         for (Employee employee : employees) {
             System.out.println(employee.getName());
