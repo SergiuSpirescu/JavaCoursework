@@ -24,12 +24,7 @@ public class Main {
         employees.add(snow);
         employees.add(jack);
 
-        Collections.sort(employees, new Comparator<Employee>() {
-            @Override
-            public int compare(Employee employee1, Employee employee2) {
-                return employee1.getName().compareTo(employee2.getName());
-            }
-        });
+        Collections.sort(employees, (employee1, employee2) -> employee1.getName().compareTo(employee2.getName()));
 
         for (Employee employee : employees) {
             System.out.println(employee.getName());
