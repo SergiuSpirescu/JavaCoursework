@@ -24,24 +24,11 @@ public class Main {
         employees.add(snow);
         employees.add(jack);
 
-        Collections.sort(employees, (employee1, employee2) ->
-                employee1.getName().compareTo(employee2.getName()));
+      AnotherClass anotherClass = new AnotherClass();
+      String s = anotherClass.doSomething();
 
-        for (Employee employee : employees) {
-            System.out.println(employee.getName());
-        }
-//
-//        String sillyString = doStringStuff(new UpperConcat() {
-//            @Override
-//            public String upperAndConcat(String s1, String s2) {
-//                return s1.toUpperCase() + s2.toUpperCase();
-//            }
-//            }, employees.get(0).getName(), employees.get(3).getName());
+        System.out.println(s);
 
-        UpperConcat uc = (s1, s2) -> s1.toUpperCase()+s2.toUpperCase();
-
-        String sillyString = doStringStuff(uc, employees.get(0).getName(), employees.get(3).getName());
-        System.out.println(sillyString);
     }
 
     public final static String doStringStuff(UpperConcat uc, String s1, String s2) {
@@ -86,3 +73,42 @@ class Employee {
 interface UpperConcat {
     public String upperAndConcat(String s1, String s2);
 }
+
+class AnotherClass {
+
+    public String doSomething() {
+
+        UpperConcat uc = (s1, s2) -> {
+            System.out.println("The lambda expressions class is: " + getClass().getSimpleName());
+            String result = s1.toUpperCase() + s2.toUpperCase();
+            return result;
+
+        };
+
+         int i = 0;
+//        {
+//            UpperConcat uc = new UpperConcat() {
+//                @Override
+//                public String upperAndConcat(String s1, String s2) {
+//                    System.out.println("i within anon class = " + i);
+//                    return s1.toUpperCase() + s2.toUpperCase();
+//                }
+//            };
+
+            System.out.println("The AnotherClass class name is: " + getClass().getSimpleName());
+//            i++;
+            System.out.println("i = " + i);
+
+            return Main.doStringStuff(uc, "String 1", "String 2");
+    }
+}
+//    public String doSomething() {
+//        System.out.println("The anotherClass classes name is: " + getClass().getSimpleName());
+//        return Main.doStringStuff(new UpperConcat() {
+//            @Override
+//            public String upperAndConcat(String s1, String s2) {
+//                System.out.println("The anon class name is: " + getClass().getSimpleName());
+//                return s1.toUpperCase() + s2.toUpperCase();
+//            }
+//        }, "String 1", "String 2");
+//    };

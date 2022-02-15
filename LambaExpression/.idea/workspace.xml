@@ -2,8 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0c3d149c-d226-43ac-b749-3d7b82683989" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/LambaExpression/com/sspirescu/CodeToRun.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LambaExpression/com/sspirescu/CodeToRun.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/LambaExpression/com/sspirescu/Employee.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LambaExpression/com/sspirescu/Employee.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/LambaExpression/com/sspirescu/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LambaExpression/com/sspirescu/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/LambaExpression/com/sspirescu/UpperConcat.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LambaExpression/com/sspirescu/UpperConcat.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/sspirescu/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/sspirescu/Main.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -89,6 +93,7 @@
       <option name="presentableId" value="Default" />
       <updated>1644680824539</updated>
       <workItem from="1644683861117" duration="744000" />
+      <workItem from="1644953626305" duration="1320000" />
     </task>
     <task id="LOCAL-00001" summary="Commit from IntelliJ">
       <created>1644681381225</created>
@@ -113,7 +118,11 @@
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
-        <entry key="MAIN" />
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
       </map>
     </option>
   </component>
