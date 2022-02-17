@@ -32,6 +32,14 @@ public class Main {
             }
         });
 
+        System.out.println("---------");
+        
+        employees.forEach(employee -> {
+            if(employee.getAge() <= 30 ) {
+                System.out.println(employee.getName());
+            }
+        });
+
 //        for (Employee emp : employees) {
 //            if (emp.getAge() > 30) {
 //                System.out.println(emp.getName());
