@@ -3,6 +3,7 @@ package com.sspirescu;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
+import java.util.function.Function;
 import java.util.function.IntPredicate;
 import java.util.function.Predicate;
 import java.util.function.Supplier;
@@ -25,36 +26,18 @@ public class Main {
         employees.add(red);
         employees.add(charming);
 
-        printEmployeesByAge(employees, "Employees over 30", employee -> (employee.getAge() > 30));
+        Function<Employee, String>  getLastName = (Employee employee)-> {
+            return employee.getName().substring(employee.getName().indexOf(' ') + 1);
+        };
 
-        System.out.println( " / / / / / / / / / / ");
-        printEmployeesByAge(employees, "Employees 30 or less", employee -> employee.getAge() <= 30);
+        String lastName = getLastName.apply(employees.get(2));
+        System.out.println(lastName);
 
-        System.out.println( " / / / / / / / / / / ");
-        printEmployeesByAge(employees, "\nEmployees younger than 25", new Predicate<Employee>() {
-            @Override
-            public boolean test(Employee employee) {
-                return employee.getAge() < 25;
-            }
-        });
+//        employees.forEach(employee -> {
+//            String lastName = employee.getName().substring(employee.getName().indexOf(' ') + 1);
+//            System.out.println("Last Name is: " + lastName);
+//        });
 
-        System.out.println( " / / / / / / / / / / ");
-
-        IntPredicate greaterThan15 = i -> i > 15;
-        IntPredicate lessThan100 = i -> i < 100;
-        System.out.println(greaterThan15.test(10));
-        int a = 20;
-        System.out.println(greaterThan15.test(a + 5));
-
-        System.out.println(greaterThan15.or(lessThan100).test(10));
-        System.out.println(greaterThan15.and(lessThan100).test(50));
-
-        Random random = new Random();
-        Supplier<Integer> randomSupplier = () -> random.nextInt(1000);
-
-        for(int i=0; i<10; i++) {
-            System.out.println(randomSupplier.get());
-        }
 
 
     }
