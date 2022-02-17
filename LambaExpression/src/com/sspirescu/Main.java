@@ -17,11 +17,25 @@ public class Main {
         employees.add(snow);
         employees.add(jack);
 
-        for (Employee employee : employees) {
-            System.out.println(employee.getName());
-            new Thread(() ->System.out.println(employee.getAge())).start();
-        }
 
+        employees.forEach(employee -> {
+            System.out.println(employee.getName());
+            System.out.println(employee.getAge());
+        });
+        
+
+//        for (Employee employee : employees) {
+//            System.out.println(employee.getName());
+//            System.out.println(employee.getAge());
+//        }
+
+//        Employee employee;   cannot define outside of scope
+//        System.out.println("*************");
+//        for (int i=0; i<employees.size(); i++) {
+//            Employee employee = employees.get(i);
+//            System.out.println(employee.getName());
+//            new Thread(() -> System.out.println(employee.getAge())).start();
+//        }
     }
 
     public final static String doStringStuff(UpperConcat uc, String s1, String s2) {
