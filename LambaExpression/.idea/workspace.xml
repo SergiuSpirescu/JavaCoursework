@@ -1,12 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0c3d149c-d226-43ac-b749-3d7b82683989" name="Default Changelist" comment="Added a Thread to print employee name then age, via a lambda">
-      <change beforePath="$PROJECT_DIR$/out/production/LambaExpression/com/sspirescu/CodeToRun.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LambaExpression/com/sspirescu/CodeToRun.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/LambaExpression/com/sspirescu/Employee.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LambaExpression/com/sspirescu/Employee.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/LambaExpression/com/sspirescu/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LambaExpression/com/sspirescu/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/sspirescu/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/sspirescu/Main.java" afterDir="false" />
-    </list>
+    <list default="true" id="0c3d149c-d226-43ac-b749-3d7b82683989" name="Default Changelist" comment="Added a Thread to print employee name then age, via a lambda" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -83,7 +78,7 @@
       <updated>1644680824539</updated>
       <workItem from="1644683861117" duration="744000" />
       <workItem from="1644953626305" duration="1548000" />
-      <workItem from="1645119395188" duration="1348000" />
+      <workItem from="1645119395188" duration="1602000" />
     </task>
     <task id="LOCAL-00001" summary="Commit from IntelliJ">
       <created>1644681381225</created>
