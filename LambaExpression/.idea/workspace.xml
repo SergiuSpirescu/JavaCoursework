@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0c3d149c-d226-43ac-b749-3d7b82683989" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    <list default="true" id="0c3d149c-d226-43ac-b749-3d7b82683989" name="Default Changelist" comment="Added a Thread to print employee name then age, via a lambda">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/LambaExpression/com/sspirescu/CodeToRun.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LambaExpression/com/sspirescu/CodeToRun.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/LambaExpression/com/sspirescu/Employee.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LambaExpression/com/sspirescu/Employee.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/LambaExpression/com/sspirescu/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LambaExpression/com/sspirescu/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/sspirescu/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/sspirescu/Main.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -81,7 +84,7 @@
       <updated>1644680824539</updated>
       <workItem from="1644683861117" duration="744000" />
       <workItem from="1644953626305" duration="1548000" />
-      <workItem from="1645119395188" duration="309000" />
+      <workItem from="1645119395188" duration="1044000" />
     </task>
     <task id="LOCAL-00001" summary="Commit from IntelliJ">
       <created>1644681381225</created>
@@ -120,6 +123,8 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Commit from IntelliJ" />
     <MESSAGE value="Added List of employees and Comparator to sort them &#10;&#10;Commit from IntelliJ" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added List of employees and Comparator to sort them &#10;&#10;Commit from IntelliJ" />
+    <MESSAGE value="Added a Thread to print employee name then age, via a lambda" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added a Thread to print employee name then age, via a lambda" />
+    <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
 </project>

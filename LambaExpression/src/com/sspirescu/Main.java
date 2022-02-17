@@ -6,13 +6,6 @@ public class Main {
 
     public static void main(String[] args) {
 
-        new Thread(() -> {
-            System.out.println("Printing from the Lambda");
-            System.out.println("This is line 2");
-            System.out.format("This is line %d\n", 3);
-        }).start();
-
-
         Employee john = new Employee("Rohan Doe", 30);
         Employee tim = new Employee("Tim Buchalka", 41);
         Employee snow = new Employee("Jon Snow", 17);
@@ -24,10 +17,10 @@ public class Main {
         employees.add(snow);
         employees.add(jack);
 
-      AnotherClass anotherClass = new AnotherClass();
-      String s = anotherClass.doSomething();
-
-        System.out.println(s);
+        for (Employee employee : employees) {
+            System.out.println(employee.getName());
+            new Thread(() ->System.out.println(employee.getAge())).start();
+        }
 
     }
 
@@ -80,20 +73,13 @@ class AnotherClass {
 
         UpperConcat uc = (s1, s2) -> {
             System.out.println("The lambda expressions class is: " + getClass().getSimpleName());
+
             String result = s1.toUpperCase() + s2.toUpperCase();
             return result;
-
         };
 
+
          int i = 0;
-//        {
-//            UpperConcat uc = new UpperConcat() {
-//                @Override
-//                public String upperAndConcat(String s1, String s2) {
-//                    System.out.println("i within anon class = " + i);
-//                    return s1.toUpperCase() + s2.toUpperCase();
-//                }
-//            };
 
             System.out.println("The AnotherClass class name is: " + getClass().getSimpleName());
 //            i++;
@@ -101,14 +87,19 @@ class AnotherClass {
 
             return Main.doStringStuff(uc, "String 1", "String 2");
     }
+
+    public void printValue() {
+        int number = 25;
+
+        Runnable r = () -> {
+            try {
+                Thread.sleep(5000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            System.out.println("The value is " + number);
+        };
+
+        new Thread(r).start();
+    }
 }
-//    public String doSomething() {
-//        System.out.println("The anotherClass classes name is: " + getClass().getSimpleName());
-//        return Main.doStringStuff(new UpperConcat() {
-//            @Override
-//            public String upperAndConcat(String s1, String s2) {
-//                System.out.println("The anon class name is: " + getClass().getSimpleName());
-//                return s1.toUpperCase() + s2.toUpperCase();
-//            }
-//        }, "String 1", "String 2");
-//    };
