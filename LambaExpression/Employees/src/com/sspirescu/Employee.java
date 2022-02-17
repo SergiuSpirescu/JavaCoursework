@@ -42,26 +42,6 @@ interface UpperConcat {
 }
 
 class AnotherClass {
-
-    public String doSomething() {
-
-        UpperConcat uc = (s1, s2) -> {
-            System.out.println("The lambda expressions class is: " + getClass().getSimpleName());
-
-            String result = s1.toUpperCase() + s2.toUpperCase();
-            return result;
-        };
-
-
-        int i = 0;
-
-        System.out.println("The AnotherClass class name is: " + getClass().getSimpleName());
-//            i++;
-        System.out.println("i = " + i);
-
-        return Main.doStringStuff(uc, "String 1", "String 2");
-    }
-
     public void printValue() {
         int number = 25;
 
