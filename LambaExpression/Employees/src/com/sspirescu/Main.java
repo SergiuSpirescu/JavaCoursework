@@ -11,18 +11,26 @@ public class Main {
         Employee tim = new Employee("Tim Buchalka", 41);
         Employee snow = new Employee("Jon Snow", 17);
         Employee jack = new Employee("Jack Reacher", 34);
+        Employee red = new Employee("Red Riding Hood" , 35);
+        Employee charming = new Employee("Prince Charmning" , 31);
 
         List<Employee> employees = new ArrayList<>();
         employees.add(john);
         employees.add(tim);
         employees.add(snow);
         employees.add(jack);
+        employees.add(red);
+        employees.add(charming);
 
 
-        employees.forEach(employee -> {
-            System.out.println(employee.getName());
-            System.out.println(employee.getAge());
-        });
+        System.out.println("Employees over 30:");
+        System.out.println("=============");
+
+        for (Employee emp : employees) {
+            if (emp.getAge() > 30) {
+                System.out.println(emp.getName());
+            }
+        }
 
     }
 
