@@ -16,7 +16,7 @@ public class Main {
         Employee snow = new Employee("Jon Snow", 17);
         Employee jack = new Employee("Jack Reacher", 34);
         Employee red = new Employee("Red Riding Hood", 35);
-        Employee charming = new Employee("Prince Charmning", 31);
+        Employee charming = new Employee("Prince Charming", 31);
 
         List<Employee> employees = new ArrayList<>();
         employees.add(john);
@@ -39,6 +39,8 @@ public class Main {
 
         Random random1 = new Random();
 
+        System.out.println("Get some random names from the List:\n");
+
         for (Employee employee : employees) {
             if(random1.nextBoolean()){
                 System.out.println(getAName(getFirstName, employee));
@@ -46,6 +48,26 @@ public class Main {
                 System.out.println(getAName(getLastName, employee));
             }
         }
+
+        System.out.println("---------------------\n");
+        System.out.println("Print all names as Initial of First name and Full Last name:\n");
+
+        Function<String,String> firstLetter = name -> name.substring(0,1);
+
+        Function<Employee,String> getInitial = firstLetter.compose(getFirstName);
+
+
+        employees.forEach( emp -> {
+        System.out.println(getInitial.apply(emp)+". " + getLastName.apply(emp));
+        });
+//
+//
+//        Function<List<Employee>, Employee> getEmp = emplist -> emplist.get(0);
+//        Function<Employee, String> nameEmp = emp -> emp.getName();
+//
+//        Function<List<Employee>,String> writeEmp = nameEmp.compose(getEmp);
+//
+//        System.out.println(writeEmp.apply(employees));
 
 
 //        employees.forEach(employee -> {
