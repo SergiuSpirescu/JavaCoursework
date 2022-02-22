@@ -81,7 +81,7 @@ public class Main {
 
         IntUnaryOperator incBy5 = i -> i + 5;
         System.out.println(incBy5.applyAsInt(10));
-        
+
 //
 //
 //        employees.forEach(employee -> {
