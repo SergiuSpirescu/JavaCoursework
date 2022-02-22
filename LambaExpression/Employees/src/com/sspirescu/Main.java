@@ -62,14 +62,20 @@ public class Main {
         });
 //
 //
-//        Function<List<Employee>, Employee> getEmp = emplist -> emplist.get(0);
-//        Function<Employee, String> nameEmp = emp -> emp.getName();
-//
-//        Function<List<Employee>,String> writeEmp = nameEmp.compose(getEmp);
-//
-//        System.out.println(writeEmp.apply(employees));
+        Function<List<Employee>, Employee> getEmp = emplist -> emplist.get(0);
+        Function<Employee, String> nameEmp = emp -> emp.getName();
 
+        Function<List<Employee>,String> writeEmp = nameEmp.compose(getEmp);
 
+        System.out.println(writeEmp.apply(employees));
+
+        Function<Employee,String> upperCase = employee -> employee.getName().toUpperCase();
+        Function<String,String> firstName = name -> name.substring(0, name.indexOf(' '));
+        Function chainedFunction = upperCase.andThen(firstName);
+
+        System.out.println(chainedFunction.apply(employees.get(0)));
+//
+//
 //        employees.forEach(employee -> {
 //            String lastName = employee.getName().substring(employee.getName().indexOf(' ') + 1);
 //            System.out.println("Last Name is: " + lastName);
