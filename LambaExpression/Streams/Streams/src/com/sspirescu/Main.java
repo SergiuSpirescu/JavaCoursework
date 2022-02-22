@@ -82,6 +82,13 @@ public class Main {
                 .reduce((e1, e2) -> e1.getAge() < e2.getAge() ? e1 : e2)
                 .ifPresent(System.out::println);
 
+        Stream.of("ABC", "AC", "BAA", "CCCC", "XY", "ST")
+                .filter(s -> {
+                    System.out.println(s);
+                    return s.length() == 3;
+                })
+                .count();
+
         //        someBingoNumbers.forEach(number -> {
 //            if (number.toUpperCase().startsWith("G")) {
 //                gNumbers.add(number);
