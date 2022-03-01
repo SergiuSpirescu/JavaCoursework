@@ -26,6 +26,8 @@ public class Main {
 
         System.out.println(alphanumeric.replaceAll("99z$","THE END"));
         System.out.println(alphanumeric.replaceAll("[aei]","X"));
+//        System.out.println(alphanumeric.replaceAll("[aei]","Replaced Here"));
 
+        System.out.println(alphanumeric.replaceAll("[aei][Fj]", "X"));
     }
 }
