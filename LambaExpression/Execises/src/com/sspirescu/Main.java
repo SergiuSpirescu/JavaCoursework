@@ -1,29 +1,36 @@
 package com.sspirescu;
 
+import java.util.function.Function;
+
 public class Main {
 
     public static void main(String[] args) {
 
-        Runnable runnable = new Runnable() {
-            @Override
-            public void run() {
-                String myString = "Split this into an array";
-                String[] parts = myString.split(" ");
-                for (String part: parts) {
-                    System.out.println(part + " ");
+        String myString = "aAbBc %D";
+
+        System.out.println(everySecondChar(myString));
+
+        Function<String, String> lambdaEverySecondChar = (String s) -> {
+            StringBuilder returnVal = new StringBuilder();
+            for (int i = 0; i < s.length(); i++ ) {
+                if (i % 2 == 1) {
+                    returnVal.append(s.charAt(i));
                 }
             }
+            return returnVal.toString();
         };
 
-        Runnable lambdaRunnable = () -> {
-            String myString = "Split this into an array";
-            String[] parts = myString.split(" ");
-            for (String part: parts) {
-                System.out.println(part + " ");
-            }
-        };
-
-//        lambdaRunnable.run();
-// Just to test it works
+        
     }
+
+    public static  String everySecondChar(String source) {
+        StringBuilder returnVal = new StringBuilder();
+        for (int i = 0; i < source.length(); i++ ) {
+            if (i % 2 == 1) {
+                returnVal.append(source.charAt(i));
+            }
+        }
+        return returnVal.toString();
+    }
+
 }
