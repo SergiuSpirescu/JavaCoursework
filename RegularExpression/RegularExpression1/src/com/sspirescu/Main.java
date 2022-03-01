@@ -25,5 +25,7 @@ public class Main {
         System.out.println(alphanumeric.matches("^abcDeeeF12Ghhiiijhkl99z"));
 
         System.out.println(alphanumeric.replaceAll("99z$","THE END"));
+        System.out.println(alphanumeric.replaceAll("[aei]","X"));
+
     }
 }
