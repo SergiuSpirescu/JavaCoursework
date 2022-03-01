@@ -22,6 +22,8 @@ public class Main {
 
         System.out.println(lambdaEverySecondChar.apply("1234567890"));
 
+        everySecondCharacter(lambdaEverySecondChar, "0987654321");
+
     }
 
     public static  String everySecondChar(String source) {
@@ -32,6 +34,11 @@ public class Main {
             }
         }
         return returnVal.toString();
+    }
+
+    public static  void everySecondCharacter(Function<String, String> func, String string) {
+
+        System.out.println(func.apply(string));
     }
 
 }
