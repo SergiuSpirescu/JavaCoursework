@@ -8,6 +8,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.function.Function;
 import java.util.function.Supplier;
+import java.util.stream.Collectors;
 
 public class Main {
 
@@ -68,7 +69,9 @@ public class Main {
         firstUpperCaseList.stream()
                 .map(name -> name.substring(0,1).toUpperCase() + name.substring(1))
                 .peek(System.out::println)
-                .sorted(String::compareTo);
+                .sorted(String::compareTo)
+                .collect(Collectors.toList());
+
 //                .forEach(System.out::println);
 
 //    long namesStartingWithA =  topNames2015
