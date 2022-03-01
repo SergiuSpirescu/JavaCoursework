@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0c3d149c-d226-43ac-b749-3d7b82683989" name="Default Changelist" comment="Added a Thread to print employee name then age, via a lambda">
-      <change afterPath="$PROJECT_DIR$/Employees/src/com/sspirescu/Employee.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="0c3d149c-d226-43ac-b749-3d7b82683989" name="Default Changelist" comment="Added a Thread to print employee name then age, via a lambda" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
