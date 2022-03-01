@@ -14,5 +14,14 @@ public class Main {
         System.out.println(alphanumeric.replaceAll(".","Y"));
 
         System.out.println(alphanumeric.replaceAll("^abcDeee","YYY"));
+
+        String secondString = "delTabcDeeeF12GhhiiiabcDeeejhkl99z";
+        System.out.println(secondString.replaceAll("^abcDeee","YYY"));
+        //the string MUST start with abcDeee
+
+
+        System.out.println(alphanumeric.matches("^hello"));
+        System.out.println(alphanumeric.matches("^abcDeee"));
+        System.out.println(alphanumeric.matches("^abcDeeeF12Ghhiiijhkl99z"));
     }
 }
