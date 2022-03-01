@@ -12,5 +12,7 @@ public class Main {
 
         String alphanumeric = "abcDeeeF12Ghhiiijhkl99z";
         System.out.println(alphanumeric.replaceAll(".","Y"));
+
+        System.out.println(alphanumeric.replaceAll("^abcDeee","YYY"));
     }
 }
