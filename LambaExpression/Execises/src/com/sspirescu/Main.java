@@ -6,7 +6,7 @@ public class Main {
 
     public static void main(String[] args) {
 
-        String myString = "aAbBc %D";
+        String myString = "aAbBc %CdD";
 
         System.out.println(everySecondChar(myString));
 
@@ -20,7 +20,8 @@ public class Main {
             return returnVal.toString();
         };
 
-        
+        System.out.println(lambdaEverySecondChar.apply("1234567890"));
+
     }
 
     public static  String everySecondChar(String source) {
