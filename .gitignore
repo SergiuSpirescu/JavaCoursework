@@ -27,3 +27,7 @@ hs_err_pid*
 LambaExpression/out/
 LambaExpression/.idea/
 *.xml
+*.iml
+*.xml
+*.xml
+LambaExpression/.idea/workspace.xml
