@@ -1,6 +1,7 @@
 package com.sspirescu;
 
 import java.util.function.Function;
+import java.util.function.Supplier;
 
 public class Main {
 
@@ -24,6 +25,11 @@ public class Main {
 
         String result = everySecondCharacter(lambdaEverySecondChar, "0987654321");
         System.out.println(result);
+
+
+        Supplier<String> iLoveJava = () -> {return  "I Love Java!";};
+        System.out.println(iLoveJava.get());
+
     }
 
     public static  String everySecondChar(String source) {
@@ -34,6 +40,7 @@ public class Main {
             }
         }
         return returnVal.toString();
+
     }
 
     public static  String everySecondCharacter(Function<String, String> func, String string) {
