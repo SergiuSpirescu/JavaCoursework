@@ -1,5 +1,7 @@
 package com.sspirescu;
 
+import org.w3c.dom.ls.LSOutput;
+
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -60,8 +62,10 @@ public class Main {
 //        firstUpperCaseList.forEach(s ->
 //                System.out.println(s));
 
-        firstUpperCaseList.sort(String::compareTo);
-        firstUpperCaseList.forEach(System.out::println);
+//        firstUpperCaseList.sort(String::compareTo);
+//        firstUpperCaseList.forEach(System.out::println);
+
+        firstUpperCaseList.stream().sorted(String::compareTo).forEach(System.out::println);
 
     }
 
