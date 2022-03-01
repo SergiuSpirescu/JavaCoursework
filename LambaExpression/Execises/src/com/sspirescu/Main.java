@@ -65,15 +65,19 @@ public class Main {
 //        firstUpperCaseList.sort(String::compareTo);
 //        firstUpperCaseList.forEach(System.out::println);
 
-//        firstUpperCaseList.stream().sorted(String::compareTo).forEach(System.out::println);
-
-    long namesStartingWithA =  topNames2015
-                .stream()
+        firstUpperCaseList.stream()
                 .map(name -> name.substring(0,1).toUpperCase() + name.substring(1))
-                .filter(name -> name.startsWith("A"))
-                .count();
+                .peek(System.out::println)
+                .sorted(String::compareTo);
+//                .forEach(System.out::println);
 
-        System.out.println("Number of names beggining with A is: " + namesStartingWithA);
+//    long namesStartingWithA =  topNames2015
+//                .stream()
+//                .map(name -> name.substring(0,1).toUpperCase() + name.substring(1))
+//                .filter(name -> name.startsWith("A"))
+//                .count();
+//
+//        System.out.println("Number of names beggining with A is: " + namesStartingWithA);
 
     }
 
