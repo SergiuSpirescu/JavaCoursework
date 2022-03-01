@@ -28,7 +28,10 @@ public class Main {
 
 
         Supplier<String> iLoveJava = () -> {return  "I Love Java!";};
-        System.out.println(iLoveJava.get());
+//        System.out.println(iLoveJava.get());
+
+        String supplierResult = iLoveJava.get();
+        System.out.println(supplierResult);
 
     }
 
