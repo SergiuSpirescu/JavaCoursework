@@ -9,5 +9,8 @@ public class Main {
         System.out.println(string);
         String yourString = string.replaceAll("I", "You");
         System.out.println(yourString);
+
+        String alphanumeric = "abcDeeeF12Ghhiiijhkl99z";
+        System.out.println(alphanumeric.replaceAll(".","Y"));
     }
 }
