@@ -23,5 +23,7 @@ public class Main {
         System.out.println(alphanumeric.matches("^hello"));
         System.out.println(alphanumeric.matches("^abcDeee"));
         System.out.println(alphanumeric.matches("^abcDeeeF12Ghhiiijhkl99z"));
+
+        System.out.println(alphanumeric.replaceAll("99z$","THE END"));
     }
 }
