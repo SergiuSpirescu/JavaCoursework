@@ -39,5 +39,28 @@ public class Main {
         System.out.println(alphanumeric.replaceAll("[a-f3-8]", "X"));
 
         System.out.println(alphanumeric.replaceAll("(?i)[a-f3-8]", "X"));
+
+        System.out.println(alphanumeric.replaceAll("[0-9]", "X"));
+        System.out.println(alphanumeric.replaceAll("\\d", "X"));
+        System.out.println(alphanumeric.replaceAll("\\D", "X"));
+
+        String hasWhitespace = "I have blanks and\ta tab, also a newline \n";
+        System.out.println(hasWhitespace);
+
+        System.out.println(hasWhitespace.replaceAll("\\s", ""));
+        System.out.println(hasWhitespace.replaceAll("\t", "X"));
+        System.out.println(hasWhitespace.replaceAll("\\S", ""));
+
+        System.out.println(alphanumeric.replaceAll("\\w", "X"));
+
+
+        System.out.println(hasWhitespace.replaceAll("\\w", "X"));
+        System.out.println(hasWhitespace.replaceAll("\\W", "X"));
+
+
+        System.out.println(hasWhitespace.replaceAll("\\b", "X"));
+
+
+
     }
 }
