@@ -1,5 +1,10 @@
 package com.sspirescu;
 
+import javafx.css.Match;
+
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 public class Main {
 
     public static void main(String[] args) {
@@ -60,7 +65,30 @@ public class Main {
 
         System.out.println(hasWhitespace.replaceAll("\\b", "X"));
 
+        String thirdAlphanumericString = "delTabcDeeeF12GhhiiiabcDeeejhkl99z";
+        System.out.println(thirdAlphanumericString.replaceAll("^abcDe{3}","YYY"));
+        //{n} the number of occurences of the character preceding the brackets
 
+        System.out.println(thirdAlphanumericString.replaceAll("^abcDe+", "YYY"));
+        System.out.println(thirdAlphanumericString.replaceAll("^abcDe*", "YXYX"));
+
+        System.out.println(thirdAlphanumericString.replaceAll("^acDe{2,5}", "YYY"));
+
+        System.out.println(thirdAlphanumericString.replaceAll("h+i*j", "Y"));
+
+        StringBuilder htmlText = new StringBuilder("<h1>My Heading</h1>");
+        htmlText.append("<h2>Sub-Heading</h2>");
+        htmlText.append("<p>Paragrah part 1</>");
+        htmlText.append("<p>Paragrapgh part 2</p>");
+        htmlText.append("<h2>Summary</h2>");
+        htmlText.append("<p>Here is the summary.</p>");
+
+        String h2Pattern = ".*<h2>.*";
+
+        Pattern pattern = Pattern.compile(h2Pattern, Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CASE);
+
+        Matcher matcher = pattern.matcher(htmlText);
+        System.out.println(matcher.matches());
 
     }
 }
