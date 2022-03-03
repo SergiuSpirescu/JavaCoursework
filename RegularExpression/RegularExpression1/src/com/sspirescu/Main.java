@@ -44,6 +44,16 @@ public class Main {
 
         System.out.println(challenge5.replaceAll(regExp5, "REPLACED"));
 
+        String challenge7 = "abcd.135";
+
+//        String regExp7 = "^([a-z]){4}(\\.){1}([0-9]){3}$";
+        String regExp7 = "^[A-Z][a-z]+\\.\\d+$";
+
+        Pattern pattern3 = Pattern.compile(regExp7);
+        Matcher matcher3 = pattern3.matcher(challenge7);
+
+        System.out.println(matcher3.matches());
+
 
     }
 }
