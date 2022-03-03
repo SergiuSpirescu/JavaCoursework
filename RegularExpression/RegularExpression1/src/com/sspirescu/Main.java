@@ -17,6 +17,14 @@ public class Main {
 
         System.out.println(challenge2.matches("I want a \\w+."));
 
+        String regExp3 = "I want a \\w+.";
+        Pattern pattern = Pattern.compile(regExp3);
+        Matcher matcher = pattern.matcher(challenge1);
+
+        System.out.println(matcher.matches());
+
+        matcher = pattern.matcher(challenge2);
+        System.out.println(matcher.matches());
 
     }
 }
