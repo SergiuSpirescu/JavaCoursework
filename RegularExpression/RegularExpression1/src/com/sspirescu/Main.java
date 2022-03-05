@@ -72,6 +72,16 @@ public class Main {
             System.out.println("Start: " + matcher10.start(1) + " End: " + (matcher10.end(1) - 1));
         }
 
+        String challenge11 = "{0, 2}, {0, 5}, {1, 3}, {2, 4}";
+
+        Pattern pattern11 = Pattern.compile("\\{(\\d{1}, \\d{1})\\}"); // My variant
+//        Pattern pattern11 = Pattern.compile("\\{(.+?)\\}"); // Tim's variant
+        Matcher matcher11 = pattern11.matcher(challenge11);
+
+        while (matcher11.find()) {
+            System.out.println("Coordinates: " + matcher11.group(1));
+        }
+
 
     }
 }
