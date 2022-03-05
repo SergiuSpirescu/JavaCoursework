@@ -90,5 +90,10 @@ public class Main {
         String challenge13 = "11111-1111";
         System.out.println(challenge13.matches("^\\d{5}-\\d{4}$"));
 
+
+        System.out.println("--Challenge 14 results--\nString challenge12: "
+                +  challenge12.matches("^\\d{5}$|\\d{5}-\\d{4}$") +
+                "\nString challenge13: " + challenge13.matches("^\\d{5}$|\\d{5}-\\d{4}$"));
+
     }
 }
