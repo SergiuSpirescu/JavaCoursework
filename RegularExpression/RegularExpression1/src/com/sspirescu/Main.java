@@ -44,16 +44,17 @@ public class Main {
 
         System.out.println(challenge5.replaceAll(regExp5, "REPLACED"));
 
-        String challenge7 = "abcd.135";
+        String challenge7 = "abcd.135uvqz.7tzik.999";
 
 //        String regExp7 = "^([a-z]){4}(\\.){1}([0-9]){3}$";
-        String regExp7 = "^[A-Z][a-z]+\\.\\d+$";
+        String regExp7 = ("[A-Za-z]+\\.(\\d+)");
 
         Pattern pattern3 = Pattern.compile(regExp7);
         Matcher matcher3 = pattern3.matcher(challenge7);
 
-        System.out.println(matcher3.matches());
-
+        while(matcher3.find()) {
+            System.out.println("Some digits: " + matcher3.group(1));
+        }
 
     }
 }
