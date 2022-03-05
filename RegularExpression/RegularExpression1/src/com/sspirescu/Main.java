@@ -82,6 +82,10 @@ public class Main {
             System.out.println("Coordinates: " + matcher11.group(1));
         }
 
+        String challenge12 = "11111";
+
+        Pattern pattern12 = Pattern.compile("\\d{5}$");
+        System.out.println(challenge12.matches("\\d{5}$"));
 
     }
 }
