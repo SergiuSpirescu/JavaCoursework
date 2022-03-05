@@ -64,6 +64,14 @@ public class Main {
             System.out.println("Some digits: " + matcher9.group(1));
         }
 
+        String challenge10 = "abcd.135\tuvqz.7\ttzik.999\n";
+        Pattern pattern10 = Pattern.compile("[A-Za-z]+\\.(\\d+)\\s");
+        Matcher matcher10 = pattern10.matcher(challenge10);
+
+        while(matcher10.find()) {
+            System.out.println("Start: " + matcher10.start(1) + " End: " + (matcher10.end(1) - 1));
+        }
+
 
     }
 }
