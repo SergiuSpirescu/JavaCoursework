@@ -84,8 +84,11 @@ public class Main {
 
         String challenge12 = "11111";
 
-        Pattern pattern12 = Pattern.compile("\\d{5}$");
+        Pattern pattern12 = Pattern.compile("^\\d{5}$");
         System.out.println(challenge12.matches("\\d{5}$"));
+
+        String challenge13 = "11111-1111";
+        System.out.println(challenge13.matches("^\\d{5}-\\d{4}$"));
 
     }
 }
