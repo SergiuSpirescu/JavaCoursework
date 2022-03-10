@@ -8,6 +8,7 @@ public class StringUtilities {
     public void addChar(StringBuilder sBuilder, char c){
         this.sBuilder.append(c);
         charsAdded++;
+
     }
 
 }
