@@ -23,6 +23,10 @@ public class BankAccount {
     // at a branch, with a teller, and is false if it uses an ATM
 
     public double deposit(double amount, boolean branch) {
+
+        if ((amount > 500.00) && (!branch)) {
+            throw new IllegalArgumentException();
+        }
         balance += amount;
         return balance;
     }
