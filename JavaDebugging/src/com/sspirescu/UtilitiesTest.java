@@ -75,6 +75,12 @@ public class UtilitiesTest {
         assertNotNull(util.nullOddLength("even"));
     }
 
+    @org.junit.Test
+    public void converter_test() throws Exception{
+        Utilities util = new Utilities();
+        assertEquals(300, util.converter(10, 5));
+    }
+
 
 
 }
