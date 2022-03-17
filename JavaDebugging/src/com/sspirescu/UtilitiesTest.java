@@ -68,5 +68,13 @@ public class UtilitiesTest {
         assertArrayEquals(new char[] {'h', 'e', 'l', 'l', 'o'}, output);
     }
 
+    @org.junit.Test
+    public void nullIfOddLength_test1() throws  Exception{
+        Utilities util = new Utilities();
+        assertNull(util.nullOddLength("odd"));
+        assertNotNull(util.nullOddLength("even"));
+    }
+
+
 
 }
