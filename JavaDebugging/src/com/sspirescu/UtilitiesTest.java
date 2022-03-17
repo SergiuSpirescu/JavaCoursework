@@ -40,6 +40,9 @@ public class UtilitiesTest {
         Utilities utilities = new Utilities();
         assertEquals("ABCDEF", utilities.removePairs("AABCDDEFF"));
         System.out.println("Test PASSED");
+        assertNull("Did not get null returned when argument passed was null", utilities.removePairs(null));
+        assertEquals("A", utilities.removePairs("A"));
+        assertEquals("", utilities.removePairs(""));
     }
 
     @org.junit.Test
@@ -48,4 +51,6 @@ public class UtilitiesTest {
         assertEquals("ABCABDEF", utilities.removePairs("ABCCABDEEF"));
         System.out.println("Test PASSED");
     }
+
+
 }

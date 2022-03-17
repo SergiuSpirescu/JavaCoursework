@@ -29,7 +29,7 @@ public class Utilities {
 
         //Length < 2, no pairs
 
-        if (source.length() < 2) {
+        if (source == null || source.length() < 2) {
             return source;
         }
 
