@@ -1,6 +1,8 @@
 package com.sspirescu;
 
 
+import java.util.Arrays;
+
 import static org.junit.Assert.*;
 
 public class UtilitiesTest {
@@ -50,6 +52,13 @@ public class UtilitiesTest {
         Utilities utilities = new Utilities();
         assertEquals("ABCABDEF", utilities.removePairs("ABCCABDEEF"));
         System.out.println("Test PASSED");
+    }
+
+    @org.junit.Test
+    public void everyNthChar_test() throws Exception {
+        Utilities util = new Utilities();
+        char[] output = util.everyNthChar(new char[] {'h', 'e', 'l', 'l', 'o'},2);
+        assertArrayEquals(new char[] {'e','l'}, output);
     }
 
 
