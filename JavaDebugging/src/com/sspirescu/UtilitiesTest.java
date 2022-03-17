@@ -79,6 +79,14 @@ public class UtilitiesTest {
     public void converter_test() throws Exception{
         Utilities util = new Utilities();
         assertEquals(300, util.converter(10, 5));
+//        assertEquals(0, util.converter(10, 0));
+    }
+
+    @org.junit.Test(expected = ArithmeticException.class)
+    public void converter_testException() throws Exception{
+        Utilities util = new Utilities();
+//        assertEquals(30, util.converter(10, 4));
+        assertEquals(0, util.converter(10, 0));
     }
 
 
