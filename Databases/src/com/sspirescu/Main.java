@@ -28,33 +28,10 @@ public class Main {
                     ")");
 
 //          INSERT RECORDS
-            //insertContact(statement, "Tim",6545678, "tim@email.com");
-
-            statement.execute("INSERT INTO " + TABLE_CONTACTS +
-                    " (" + COLUMN_NAME + ", " +
-                    COLUMN_PHONE + ", " +
-                    COLUMN_EMAIL + ") " +
-                    "VALUES('Tim',6545678, 'tim@email.com')");
-
-
-            statement.execute("INSERT INTO " + TABLE_CONTACTS +
-                    " (" + COLUMN_NAME + ", " +
-                    COLUMN_PHONE + ", " +
-                    COLUMN_EMAIL + ") " +
-                    "VALUES('Joe',45632, 'joe@anywhere.com')");
-
-
-            statement.execute("INSERT INTO " + TABLE_CONTACTS +
-                    " (" + COLUMN_NAME + ", " +
-                    COLUMN_PHONE + ", " +
-                    COLUMN_EMAIL + ") " +
-                    "VALUES('Jane',4829484, 'jane@somewhere.com')");
-
-            statement.execute("INSERT INTO " + TABLE_CONTACTS +
-                    " (" + COLUMN_NAME + ", " +
-                    COLUMN_PHONE + ", " +
-                    COLUMN_EMAIL + ") " +
-                    "VALUES('Fido',9038, 'dog@email.com')");
+            insertContact(statement, "Tim",6545678, "tim@email.com");
+            insertContact(statement, "Joe",45632, "tim@email.com");
+            insertContact(statement, "Jane",4829484, "jane@somewhere.com");
+            insertContact(statement, "Fido",9038, "dog@email.com");
 
 
             //UPDATE RECORD
@@ -83,6 +60,7 @@ public class Main {
 
         } catch (SQLException e) {
             System.out.println("Something went wrong: " + e.getMessage());
+            e.printStackTrace();
         }
     }
 
@@ -90,7 +68,8 @@ public class Main {
         statement.execute("INSERT INTO " + TABLE_CONTACTS +
                 " (" + COLUMN_NAME + ", " +
                 COLUMN_PHONE + ", " +
-                COLUMN_EMAIL + ") " +
-                "VALUES('" + name + ", " + phone + ", " + email +"')");
+                COLUMN_EMAIL +
+                " ) " +
+                "VALUES('" + name + "', " + phone + ", '" + email +"')");
     }
 }
