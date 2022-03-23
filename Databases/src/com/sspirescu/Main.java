@@ -12,10 +12,16 @@ public class Main {
         try {
             Connection conn = DriverManager.getConnection("jdbc:sqlite:C:\\Users\\SS-PC\\Ciorne\\JavaCoursework\\Databases\\testjava.db");
             Statement statement = conn.createStatement();
-            statement.execute("CREATE TABLE Contacts (name TEXT, phone INTEGER, email TEXT)");
+            statement.execute("CREATE TABLE IF NOT EXISTS Contacts" +
+                    " (name TEXT, phone INTEGER, email TEXT)");
 
+            statement.execute("INSERT INTO Contacts (name,phone,email)" +
+                    "VALUES ('Tim',654321, 'tim@email.com')");
+
+            statement.close();
+            conn.close();
         } catch (SQLException e) {
-            System.out.println("Something went wrong.." + e.getMessage());
+            System.out.println("Something went wrong: " + e.getMessage());
         }
     }
 }
