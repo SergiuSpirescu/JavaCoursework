@@ -1,9 +1,6 @@
 package com.sspirescu;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
 
 public class Main {
 
@@ -25,8 +22,18 @@ public class Main {
 ////            statement.execute("INSERT INTO Contacts (name,phone,email)" +
 ////                    "VALUES ('Fido',9038, 'dog@email.com')");
 
-            statement.execute("UPDATE Contacts SET phone=5566789 WHERE name='Jane'");
+//            statement.execute("UPDATE Contacts SET phone=5566789 WHERE name='Jane'");
+//            statement.execute("DELETE FROM Contacts WHERE name='Joe' ");
 
+            statement.execute("SELECT * FROM Contacts");
+            ResultSet results = statement.getResultSet();
+            while(results.next()) {
+                System.out.println(results.getString("name") + " " +
+                        results.getInt("phone") + " " +
+                        results.getString("email"));
+
+            }
+            results.close();
             statement.close();
             conn.close();
         } catch (SQLException e) {
