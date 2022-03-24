@@ -31,7 +31,7 @@ public class Main {
         System.out.println("\n\n");
 
         List<String> albumsForArtists =
-                dataSource.queryAlbumsForArtist("Iron Maiden", DataSource.ORDER_BY_ASC);
+                dataSource.queryAlbumsForArtist("Carole King", DataSource.ORDER_BY_DESC);
 
         for (String alb : albumsForArtists) {
             System.out.println(alb);
