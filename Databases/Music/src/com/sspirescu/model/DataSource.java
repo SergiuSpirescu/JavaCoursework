@@ -1,5 +1,6 @@
 package com.sspirescu.model;
 
+import javax.swing.plaf.nimbus.State;
 import javax.xml.transform.Result;
 import java.sql.*;
 import java.util.ArrayList;
@@ -278,6 +279,21 @@ public class DataSource {
         } catch (SQLException e) {
             System.out.println("Query for metadata failed: " + e.getMessage());
 
+        }
+    }
+
+    public int getCount (String table) {
+        String sql = "SELECT COUNT(*) AS count FROM " + table;
+
+        try (Statement statement = conn.createStatement();
+        ResultSet results = statement.executeQuery(sql)) {
+            int count = results.getInt("count");
+//            int min = results.getInt("min_id");
+            System.out.format("Count = %d\n", count);
+            return count;
+        } catch (SQLException e) {
+            System.out.println("Query failed: " + e.getMessage());
+            return -1;
         }
     }
 

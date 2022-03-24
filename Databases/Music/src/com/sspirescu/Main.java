@@ -53,6 +53,9 @@ public class Main {
 
         dataSource.querySongsMetadata();
 
+        int count = dataSource.getCount(DataSource.TABLE_SONGS);
+        
+
 
         dataSource.close();
     }
