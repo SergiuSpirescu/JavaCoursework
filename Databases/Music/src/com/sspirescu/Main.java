@@ -57,6 +57,20 @@ public class Main {
 
         dataSource.createViewForSongArtists();
 
+        System.out.println("\n\n\n");
+
+        List<SongArtist> newSongArtists = dataSource.querySongInfoView("Master Of Puppets");
+
+        if(newSongArtists.isEmpty()) {
+            System.out.println("Could not find the artist for the song.");
+            return;
+        }
+
+        for (SongArtist artist: newSongArtists) {
+            System.out.println("FROM VIEW :: Artist name: " + artist.getArtistName() +
+                    " Album name: " + artist.getAlbumName() +
+                    " Track number: " + artist.getTrack());
+        }
 
         dataSource.close();
     }
