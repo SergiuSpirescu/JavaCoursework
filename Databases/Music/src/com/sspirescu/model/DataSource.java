@@ -3,6 +3,7 @@ package com.sspirescu.model;
 import javax.xml.transform.Result;
 import java.sql.*;
 import java.util.ArrayList;
+import java.util.IllegalFormatCodePointException;
 import java.util.List;
 
 public class DataSource {
@@ -217,13 +218,48 @@ public class DataSource {
         }
     }
 
-
 //    SELECT artists.name, albums.name, songs.track FROM songs INNER JOIN
 //    albums ON songs.album = albums._id
 //    INNER JOIN artists ON albums.artist = artists._id
 //    WHERE songs.title ="Go Your Own Way"
 //    ORDER BY artists.name, albums.name COLLATE NOCASE ASC
 //    Query Songs form an Artist, with the album they are present on
+
+    public List<SongArtist> queryArtistsForSong(String songName, int sortOrder) {
+
+        StringBuilder sb = new StringBuilder(QUERY_ARTISTS_FOR_SONG_START);
+        sb.append(songName);
+        sb.append("\"");
+
+        if (sortOrder != ORDER_BY_NONE){
+            sb.append((QUERY_ARTIST_FOR_SONG_SORT));
+            if (sortOrder == ORDER_BY_DESC) {
+                sb.append("DESC");
+            } else {
+                sb.append("ASC");
+            }
+        }
+        System.out.println("SQL statement = " + sb.toString());
+
+        try (Statement statement = conn.createStatement();
+        ResultSet results = statement.executeQuery(sb.toString())) {
+            List<SongArtist> songArtists = new ArrayList<>();
+
+            while (results.next()) {
+                SongArtist songArtist = new SongArtist();
+                songArtist.setArtistName(results.getString(1));
+                songArtist.setAlbumName((results.getString(2)));
+                songArtist.setTrack(results.getInt(3));
+
+                songArtists.add(songArtist);
+            }
+
+            return songArtists;
+        } catch (SQLException e) {
+            System.out.println("Query failed: " + e.getMessage());
+            return null;
+        }
+    }
 
 }
 

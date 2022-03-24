@@ -2,6 +2,7 @@ package com.sspirescu;
 
 import com.sspirescu.model.Artist;
 import com.sspirescu.model.DataSource;
+import com.sspirescu.model.SongArtist;
 
 import javax.xml.crypto.Data;
 import java.util.List;
@@ -35,6 +36,19 @@ public class Main {
 
         for (String alb : albumsForArtists) {
             System.out.println(alb);
+        }
+
+        List<SongArtist> songArtists = dataSource.queryArtistsForSong("Go Your Own Way", DataSource.ORDER_BY_ASC);
+
+        if(songArtists == null) {
+            System.out.println("Could not find the artists for the song.");
+            return;
+        }
+
+        for (SongArtist artist : songArtists) {
+            System.out.println("Artist Name: " + artist.getArtistName() +
+                    "  Album Name: " + artist.getAlbumName() +
+                    "  Track: " + artist.getTrack());
         }
 
         dataSource.close();
