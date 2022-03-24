@@ -16,7 +16,7 @@ public class Main {
             return;
         }
 
-        List<Artist> artists = dataSource.queryArtists();
+        List<Artist> artists = dataSource.queryArtists(DataSource.ORDER_BY_ASC);
         if (artists == null) {
             System.out.println("No artists!");
             return;
@@ -24,7 +24,7 @@ public class Main {
 
         for (Artist artist : artists) {
             System.out.println("ID: " + artist.getId() +
-                    ", Artist Name " + artist.getName());
+                    ", Artist Name: " + artist.getName());
         }
 
 
