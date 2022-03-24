@@ -23,8 +23,8 @@ public class Main {
         }
 
         for (Artist artist : artists) {
-            System.out.println("ID= " + artist.getId() +
-                    "Name" + artist.getName());
+            System.out.println("ID: " + artist.getId() +
+                    ", Artist Name " + artist.getName());
         }
 
 
