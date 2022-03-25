@@ -96,14 +96,40 @@ public class DataSource {
             " WHERE " + COLUMN_SONG_TITLE + " = ?";
 
 
+    public static final String INSERT_ARTIST = "INSERT INTO " + TABLE_ARTISTS +
+            '(' + COLUMN_ARTIST_NAME + ") VALUES(?)";
+    public static final String INSERT_ALBUMS = "INSERT INTO " + TABLE_ALBUMS +
+            '(' + COLUMN_ALBUM_NAME + ", " + COLUMN_ALBUM_ARTIST + ") VALUES(?, ?)";
+    public static final String INSERT_SONGS = "INSERT INTO " + TABLE_SONGS +
+            '(' + COLUMN_SONG_TRACK + ", " + COLUMN_SONG_TITLE + ", " + COLUMN_SONG_ALBUM +
+            ") VALUES(?, ?, ?)";
+
+    public static final String QUERY_ARTIST = "SELECT " + COLUMN_ARTIST_ID + " FROM " +
+            TABLE_ARTISTS + " WHERE " + COLUMN_ARTIST_NAME + " = ?";
+
+    public static final String QUERY_ALBUM = "SELECT " + COLUMN_ALBUM_ID +" FROM " +
+            TABLE_ALBUMS + " WHERE " + COLUMN_ALBUM_NAME + " = ?";
+
+
     private Connection conn;
 
     private PreparedStatement querySongInfoView;
+    private PreparedStatement insertIntoArtists;
+    private PreparedStatement insertIntoAlbums;
+    private PreparedStatement insertIntoSongs;
+    private PreparedStatement queryArtist;
+    private PreparedStatement queryAlbum;
 
     public boolean open() {
         try {
             conn = DriverManager.getConnection(CONNECTION_STRING);
             querySongInfoView = conn.prepareStatement(QUERY_VIEW_SONG_INFO_PREP);
+            insertIntoArtists = conn.prepareStatement(INSERT_ARTIST, Statement.RETURN_GENERATED_KEYS);
+            insertIntoAlbums = conn.prepareStatement(INSERT_ALBUMS, Statement.RETURN_GENERATED_KEYS);
+            insertIntoSongs = conn.prepareStatement(INSERT_SONGS);
+            queryArtist = conn.prepareStatement(QUERY_ARTIST);
+            queryAlbum = conn.prepareStatement(QUERY_ALBUM);
+
             return true;
         } catch (SQLException e) {
             System.out.println("Cannot connect to DataBase: " + e.getMessage());
@@ -114,12 +140,34 @@ public class DataSource {
 
     public void close() {
         try {
-            if(querySongInfoView != null) {
+            if (querySongInfoView != null) {
                 querySongInfoView.close();
             }
+
+            if (insertIntoArtists != null) {
+                insertIntoArtists.close();
+            }
+
+            if (insertIntoAlbums != null) {
+                insertIntoAlbums.close();
+            }
+
+            if (insertIntoSongs != null) {
+                insertIntoSongs.close();
+            }
+
+            if (queryArtist != null) {
+                queryArtist.close();
+            }
+
+            if (queryAlbum != null) {
+                queryAlbum.close();
+            }
+
             if (conn != null) {
                 conn.close();
             }
+
         } catch (SQLException e) {
             System.out.println("Cannot close connection: " + e.getMessage());
             e.printStackTrace();
