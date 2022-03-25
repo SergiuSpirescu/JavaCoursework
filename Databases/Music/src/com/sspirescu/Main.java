@@ -60,23 +60,25 @@ public class Main {
 
         System.out.println("\n\n\n");
 
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Enter a song title:");
+//        Scanner scanner = new Scanner(System.in);
+//        System.out.println("Enter a song title:");
+//
+//        String title = scanner.nextLine();
+//
+//        List<SongArtist> newSongArtists = dataSource.querySongInfoView(title);
+//
+//        if(newSongArtists.isEmpty()) {
+//            System.out.println("Could not find the artist for the song.");
+////            return;
+//        }
 
-        String title = scanner.nextLine();
+//        for (SongArtist artist: newSongArtists) {
+//            System.out.println("FROM VIEW :: Artist name: " + artist.getArtistName() +
+//                    " Album name: " + artist.getAlbumName() +
+//                    " Track number: " + artist.getTrack());
+//        }
 
-        List<SongArtist> newSongArtists = dataSource.querySongInfoView(title);
-
-        if(newSongArtists.isEmpty()) {
-            System.out.println("Could not find the artist for the song.");
-            return;
-        }
-
-        for (SongArtist artist: newSongArtists) {
-            System.out.println("FROM VIEW :: Artist name: " + artist.getArtistName() +
-                    " Album name: " + artist.getAlbumName() +
-                    " Track number: " + artist.getTrack());
-        }
+        dataSource.insertSong("Bird Dog", "Everly Brothers", "Al hits", 7);
 
         dataSource.close();
     }
