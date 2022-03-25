@@ -6,6 +6,7 @@ import com.sspirescu.model.SongArtist;
 
 import javax.xml.crypto.Data;
 import java.util.List;
+import java.util.Scanner;
 
 public class Main {
 
@@ -59,7 +60,12 @@ public class Main {
 
         System.out.println("\n\n\n");
 
-        List<SongArtist> newSongArtists = dataSource.querySongInfoView("Master Of Puppets");
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter a song title:");
+
+        String title = scanner.nextLine();
+
+        List<SongArtist> newSongArtists = dataSource.querySongInfoView(title);
 
         if(newSongArtists.isEmpty()) {
             System.out.println("Could not find the artist for the song.");
