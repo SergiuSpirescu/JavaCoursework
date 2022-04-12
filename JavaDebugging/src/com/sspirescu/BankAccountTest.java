@@ -49,7 +49,7 @@ public class BankAccountTest {
 
     @org.junit.AfterClass
     public static void afterClass() {
-        System.out.println("This executes after any test cases. Count = " + count++);
+        System.out.println("This executes after all test cases. Count = " + count++);
     }
 
     @org.junit.After
