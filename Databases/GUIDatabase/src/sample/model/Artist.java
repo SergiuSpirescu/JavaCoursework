@@ -17,6 +17,8 @@ public class Artist {
         this.id = id;
     }
 
+    //task.setOnSucceeded(e->artistTable.getItems().setAll(artistResults);
+
     public SimpleStringProperty getName() {
         return name;
     }
