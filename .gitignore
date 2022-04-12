@@ -38,3 +38,6 @@ Databases/sqlite-tools-win32-x86-3380100/sqlite-tools-win32-x86-3380100/sqldiff.
 Databases/sqlite-tools-win32-x86-3380100/sqlite-tools-win32-x86-3380100/sqlite3.exe
 Databases/sqlite-tools-win32-x86-3380100/sqlite-tools-win32-x86-3380100/sqlite3_analyzer.exe
 Databases/.idea/description.html
+.idea/workspace.xml
+Databases/GUIDatabase/out/production/GUIDatabase/sample/main.fxml
+Databases/GUIDatabase/.idea/description.html
