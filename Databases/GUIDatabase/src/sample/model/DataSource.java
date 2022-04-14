@@ -125,6 +125,8 @@ public class DataSource {
     public static final String QUERY_ALBUM = "SELECT " + COLUMN_ALBUM_ID + " FROM " +
             TABLE_ALBUMS + " WHERE " + COLUMN_ALBUM_NAME + " = ?";
 
+    public static final String UPDATE_ARTIST_NAME = "UPDATE " + TABLE_ARTISTS + " SET " +
+            COLUMN_ARTIST_NAME + " = ? WHERE " + COLUMN_ARTIST_ID + " = ?";
 
     private Connection conn;
     private PreparedStatement querySongInfoView;
@@ -134,6 +136,7 @@ public class DataSource {
     private PreparedStatement queryArtist;
     private PreparedStatement queryAlbum;
     private PreparedStatement queryAlbumByArtistId;
+    private PreparedStatement updateArtistName;
 
     public boolean open() {
         try {
@@ -145,6 +148,7 @@ public class DataSource {
             queryArtist = conn.prepareStatement(QUERY_ARTIST);
             queryAlbum = conn.prepareStatement(QUERY_ALBUM);
             queryAlbumByArtistId = conn.prepareStatement(QUERY_ALBUMS_BY_ARTIST_ID);
+            updateArtistName = conn.prepareStatement(UPDATE_ARTIST_NAME);
 
             return true;
         } catch (SQLException e) {
@@ -184,6 +188,10 @@ public class DataSource {
                 queryAlbumByArtistId.close();
             }
 
+            if (updateArtistName != null) {
+                updateArtistName.close();
+            }
+
             if (conn != null) {
                 conn.close();
             }
@@ -216,16 +224,16 @@ public class DataSource {
             while (results.next()) {
 
                 try {
-                    Thread.sleep(20);
+                    Thread.sleep(5);
                 } catch (InterruptedException e) {
                     System.out.println("Interrupted: " + e.getMessage());
                     e.printStackTrace();
                 }
-                    Artist artist = new Artist();
-                    artist.setId(results.getInt(INDEX_ARTIST_ID));
-                    artist.setName(results.getString(INDEX_ARTIST_NAME));
-                    artists.add(artist);
-                }
+                Artist artist = new Artist();
+                artist.setId(results.getInt(INDEX_ARTIST_ID));
+                artist.setName(results.getString(INDEX_ARTIST_NAME));
+                artists.add(artist);
+            }
 
             return artists;
 
@@ -233,24 +241,6 @@ public class DataSource {
             System.out.println("Query failed: " + e.getMessage());
             return null;
         }
-//        finally {
-//            try {
-//                if(results != null) {
-//                    results.close();
-//                }
-//            } catch (SQLException e) {
-//                e.getMessage();
-//            }
-//
-//
-//            try {
-//                if (statement != null) {
-//                    statement.close();
-//                }
-//            } catch (SQLException e) {
-//                e.getMessage();
-//            }
-//        }
     }
 
     // SELECT albums.name FROM albums INNER JOIN artists ON albums.artist = artists._id WHERE artists.name = "Pink Floyd" ORDER BY albums.name COLLATE NOCASE ASC
@@ -327,6 +317,21 @@ public class DataSource {
             System.out.println("Query failed: " + e.getMessage());
             return -1;
         }
+    }
+
+    public boolean updateArtistName(int id, String newName) {
+        try {
+            updateArtistName.setString(1, newName);
+            updateArtistName.setInt(2, id);
+            int affectedRecords = updateArtistName.executeUpdate();
+            return affectedRecords == 1;
+
+        } catch (SQLException e) {
+            System.out.println("Update failed");
+            System.out.println("Reason: " + e.getMessage());
+            return false;
+        }
+
     }
 
     public boolean createViewForSongArtists() {
