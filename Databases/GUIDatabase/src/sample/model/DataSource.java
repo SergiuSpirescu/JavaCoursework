@@ -214,11 +214,18 @@ public class DataSource {
 
             List<Artist> artists = new ArrayList<>();
             while (results.next()) {
-                Artist artist = new Artist();
-                artist.setId(results.getInt(INDEX_ARTIST_ID));
-                artist.setName(results.getString(INDEX_ARTIST_NAME));
-                artists.add(artist);
-            }
+
+                try {
+                    Thread.sleep(20);
+                } catch (InterruptedException e) {
+                    System.out.println("Interrupted: " + e.getMessage());
+                    e.printStackTrace();
+                }
+                    Artist artist = new Artist();
+                    artist.setId(results.getInt(INDEX_ARTIST_ID));
+                    artist.setName(results.getString(INDEX_ARTIST_NAME));
+                    artists.add(artist);
+                }
 
             return artists;
 
