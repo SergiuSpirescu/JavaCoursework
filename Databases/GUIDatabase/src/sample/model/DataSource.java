@@ -48,6 +48,7 @@ public class DataSource {
 
 
     private static DataSource instance = new DataSource();
+
     private DataSource() {
 
     }
@@ -126,7 +127,6 @@ public class DataSource {
 
 
     private Connection conn;
-
     private PreparedStatement querySongInfoView;
     private PreparedStatement insertIntoArtists;
     private PreparedStatement insertIntoAlbums;
@@ -420,7 +420,25 @@ public class DataSource {
             }
 
         }
+    }
 
+    public List<Album> queryAlbumForArtistId(int id) {
+        try {
+            queryAlbumByArtistId.setInt(1, id);
+            ResultSet result = queryAlbumByArtistId.executeQuery();
+            List<Album> albums = new ArrayList<>();
+            while (result.next()) {
+                Album album = new Album();
+                album.setId(result.getInt(1));
+                album.setName(result.getString(2));
+                album.setArtistId(id);
+                albums.add(album);
+            }
+            return albums;
+        } catch (SQLException e) {
+            System.out.println("Query Failed " + e.getMessage());
+            return null;
+        }
     }
 }
 
