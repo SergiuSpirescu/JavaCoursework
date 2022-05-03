@@ -34,3 +34,6 @@ LambaExpression/.idea/workspace.xml
 *.xml
 RegularExpression/RegularExpression1/.idea/description.html
 JavaDebugging/.idea/description.html
+Networking/.idea/description.html
+Networking/EchoClient/.idea/description.html
+Networking/EchoServer/.idea/description.html
