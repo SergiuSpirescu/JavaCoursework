@@ -14,7 +14,7 @@ public class Main {
 
         try {
 
-            URL url = new URL("http://example.org");
+            URL url = new URL("https://www.flickr.com/services/feeds/photos_public.gne?tags=bats");
             HttpURLConnection connection = (HttpURLConnection) url.openConnection();
             connection.setRequestMethod("GET");
             connection.setRequestProperty("User-Agent", "Chrome");
@@ -25,6 +25,7 @@ public class Main {
 
             if (responseCode != 200) {
                 System.out.println("Error reading webpage..");
+                System.out.println(connection.getResponseMessage());
                 return;
             }
 
