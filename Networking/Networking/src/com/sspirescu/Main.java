@@ -5,6 +5,8 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.*;
 import java.nio.Buffer;
+import java.util.List;
+import java.util.Map;
 
 public class Main {
 
@@ -13,24 +15,47 @@ public class Main {
         try {
 
             URL url = new URL("http://example.org");
-            URLConnection urlConnection = url.openConnection();
-            urlConnection.setDoOutput(true);
-            urlConnection.connect();
+            HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+            connection.setRequestMethod("GET");
+            connection.setRequestProperty("User-Agent", "Chrome");
+            connection.setReadTimeout(15000);
 
-//            URI uri = url.toURI();
+            int responseCode = connection.getResponseCode();
+            System.out.println("Response code: " + responseCode);
 
-            BufferedReader inputStream = new BufferedReader(
-                    new InputStreamReader(urlConnection.getInputStream())
+            if (responseCode != 200) {
+                System.out.println("Error reading webpage..");
+                return;
+            }
+
+            BufferedReader inputReader = new BufferedReader(
+                    new InputStreamReader(connection.getInputStream())
             );
 
             String line = "";
-            while (line != null)
+            while ((line = inputReader.readLine()) != null)
             {
-                line = inputStream.readLine();
+                line = inputReader.readLine();
                 System.out.println(line);
             }
 
-            inputStream.close();
+            inputReader.close();
+//            urlConnection.setDoOutput(true);
+//            urlConnection.connect();
+
+//            URI uri = url.toURI();
+
+
+//            Map<String, List<String>> headerFields = urlConnection.getHeaderFields();
+//
+//            for (Map.Entry<String, List<String>> entry : headerFields.entrySet()){
+//                String key = entry.getKey();
+//                List<String> value = entry.getValue();
+//                System.out.println("-----KEY = " + key);
+//                for (String s : value) {
+//                    System.out.println("----VALUE = " + s);
+//                }
+//            }
 
 //            System.out.println("Scheme = " + uri.getScheme());
 //            System.out.println("Scheme specific part = " + uri.getSchemeSpecificPart());
